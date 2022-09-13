@@ -1,8 +1,18 @@
+const randomFunc = {
+  lower: getRandomLower,
+  upper: getRandomUpper,
+  number: getRandomNumber,
+  symbol: getRandomSymbol,
+};
+
 // Generator functions
 // list of int values for each character http://www.net-comber.com/charset.html
 
 /**
  * Generate random number within between min and max values, inclusive
+ * @param {number} min
+ * @param {number} max
+ * @returns
  */
 function getRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
@@ -24,5 +34,17 @@ function getRandomUpper() {
   return String.fromCharCode(getRandomNumber(65, 90));
 }
 
+/**
+ *
+ * @param {string} symbols a string of all possible symbols
+ * @returns a random symbol as a string
+ */
+function getRandomSymbol(symbols) {
+  const idx = getRandomNumber(0, symbols.length - 1);
+  return symbols[idx];
+}
+
 console.log(getRandomLower());
 console.log(getRandomUpper());
+console.log(getRandomNumber(0, 9));
+console.log(getRandomSymbol("!@#$%^&*()"));
