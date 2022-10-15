@@ -38,8 +38,18 @@
           <input type="checkbox" id="numbers" checked />
         </div>
         <div class="setting">
-          <label for="symbols">Include symbols</label>
+          <label for="symbols">
+            Include symbols ~`!@#$%^&*()_-+={}[]|\:;"'&lt;&gt;,.?/
+          </label>
           <input type="checkbox" id="symbols" checked />
+        </div>
+        <div class="setting">
+          <label for="includeSymbols">Include only provided symbols</label>
+          <input type="text" length="40" id="includeSymbols" />
+        </div>
+        <div class="setting">
+          <label for="excludeSymbols">Exclude provided symbols</label>
+          <input type="text" length="40" id="excludeSymbols" />
         </div>
       </div>
       <button class="btn btn-large" id="generate">Generate password</button>
